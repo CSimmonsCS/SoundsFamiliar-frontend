@@ -1,2 +1,2 @@
-export const API_URL = "http://localhost:8000/api/songs/";
-export const USER_URL = "http://localhost:8000/core/users/";
+export const API_URL = "https://soundsfamiliar-deploy.herokuapp.com/api/songs/";
+export const USER_URL = "https://soundsfamiliar-deploy.herokuapp.com/core/users/";
