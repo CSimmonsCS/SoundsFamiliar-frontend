@@ -12,7 +12,7 @@ import Search from './components/Search';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 
-import { USER_URL, CURRENT_USER_URL, TOKEN_URL } from "./constants";
+import { USER_URL, CURRENT_USER_URL, TOKEN_URL } from "./components/constants";
 
 import {withRouter} from 'react-router';
 import { useHistory } from "react-router-dom";
