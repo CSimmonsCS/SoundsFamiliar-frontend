@@ -12,6 +12,8 @@ import Search from './components/Search';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 
+import { USER_URL, CURRENT_USER_URL, TOKEN_URL } from "../constants";
+
 import {withRouter} from 'react-router';
 import { useHistory } from "react-router-dom";
 import {
@@ -41,7 +43,8 @@ class App extends React.Component{
 
   componentDidMount() {
     if (this.state.logged_in) {
-      fetch('http://localhost:8000/core/current_user/', {
+      // fetch('http://localhost:8000/core/current_user/', {
+      fetch(CURRENT_USER_URL, {
         headers: {
           Authorization: `JWT ${localStorage.getItem('token')}`
         }
@@ -56,7 +59,8 @@ class App extends React.Component{
   handle_signup = (e, data) => {
     e.preventDefault();
     // axios.post('http://localhost:8000/core/users/', this.state, {
-    fetch('http://localhost:8000/core/users/', {
+    // fetch('http://localhost:8000/core/users/', {
+    fetch(USER_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -78,7 +82,8 @@ class App extends React.Component{
 
   handle_login = (e, data) => {
     e.preventDefault();
-    fetch('http://localhost:8000/token-auth/', {
+    // fetch('http://localhost:8000/token-auth/', {
+    fetch(TOKEN_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
